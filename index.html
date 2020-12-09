@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div class="prev">
+      <i class="far fa-caret-square-left" @click="prevImage"></i>
+    </div>
+    <div class="slider">
+      <img :src="images[imageIndex]" alt="paesaggio">
+    </div>
+    <div class="next">
+      <i class="far fa-caret-square-right" @click="nextImage"></i>
+    </div>
+    <div class="container_pallini">
+      <i v-for="(image, index) in images" class="fas fa-circle">{{ index }}</i>
+    </div>
+  </div>
+  <script src="script.js" charset="utf-8"></script>
+</body>
+</html>
