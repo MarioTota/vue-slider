@@ -7,10 +7,25 @@ var app = new Vue({
         "https://www.edizionigoree.it/wp-content/uploads/2017/09/landscape-definizioni-varie.jpg",
         "https://photographylife.com/wp-content/uploads/2017/01/What-is-landscape-photography.jpg",
         "https://loadedlandscapes.com/wp-content/uploads/2019/07/lighting-1280x720.jpg"
-      ]
+      ],
+      autoPlay: ''
     },
-
+    created: function () {
+      this.autoPlay = setInterval(
+        () => {
+          this.nextImage();
+        }, 3000
+      )
+    },
     methods: {
+      clickNextImage: function () {
+        clearInterval(this.autoPlay);
+        this.nextImage();
+      },
+      clickPrevImage: function () {
+        clearInterval(this.autoPlay);
+        this.prevImage();
+      },
       nextImage: function () {
         this.imageIndex++;
 

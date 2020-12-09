@@ -11,18 +11,20 @@
 </head>
 <body>
   <div id="root">
+
     <div class="prev">
-      <i class="far fa-caret-square-left" @click="prevImage"></i>
+      <i class="far fa-caret-square-left" @click="clickPrevImage"></i>
     </div>
     <div class="slider">
       <img :src="images[imageIndex]" alt="paesaggio">
     </div>
     <div class="next">
-      <i class="far fa-caret-square-right" @click="nextImage"></i>
+      <i class="far fa-caret-square-right" @click="clickNextImage"></i>
     </div>
     <div class="container_pallini">
-      <i v-for="(image, index) in images" class="fas fa-circle">{{ index }}</i>
+      <i v-for="(image, index) in images" :class="(index == imageIndex) ? 'active' : ''" class="fas fa-circle"></i>
     </div>
+
   </div>
   <script src="script.js" charset="utf-8"></script>
 </body>
